@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
-	<body>
-		<h1>Registration</h1>
-		<form id="reg-form">
-			<input type="text" autocomplete="off" id="username" placeholder="Username" />
-			<input type="password" autocomplete="off" id="password" placeholder="Password" />
-			<input type="submit" value="Submit Form" />
-		</form>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+    <title>Login Tes</title>
+  </head>
 
-		<script>
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="img/noted.png" alt="logo">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">Registrasi</h4>
+							<form id="reg-form" method="POST" class="my-login-validation" novalidate="">
+								<div class="form-group">
+									<label for="username">Username</label>
+									<input type="text" autocomplete="off" id="username" placeholder="Username" class="form-control" />
+								</div>
+
+								<div class="form-group">
+									<label for="password">Password</label>
+									<input type="password" autocomplete="off" id="password" placeholder="Password" class="form-control />
+								   
+								</div>
+
+								<div class="form-group">
+									
+								</div>
+
+								<div class="form-group m-0">
+									<input type="submit" value="Registrasi" class="btn btn-primary btn-block" />
+									</button>
+								</div>
+								<div class="mt-4 text-center">
+									Don't have an account? <a href="registrasi.html">Register</a>
+								</div>
+
+
+
+								
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<script>
 			const form = document.getElementById('reg-form')
 			form.addEventListener('submit', registerUser)
 
@@ -36,10 +79,30 @@
 				if (result.status === 'ok') {
 					// everythign went fine
 					alert('Success')
+					window.location.href = "index.html";
 				} else {
 					alert(result.error)
 				}
 			}
 		</script>
+
+
+
+		<script src="https://unpkg.com/react@16/umd/react.production.min.js"
+      crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+      crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="WelcomeBack.js"></script>
+    <script type="text/babel" src="CoolButton.js"></script>
+
+    <script type="text/babel">
+      ReactDOM.render(<WelcomeBack />, document.querySelector(".welcome-back"));
+    </script>
+
+
 	</body>
 </html>
+
+
